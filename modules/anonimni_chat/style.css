@@ -1,0 +1,175 @@
+
+:root{
+  --bg:#050907;
+  --panel:#0a1410;
+  --panel-2:#0e1b15;
+  --line:rgba(130,255,184,.15);
+  --green:#7dffad;
+  --text:#e6f2eb;
+  --muted:#89a398;
+  --danger:#ff6b6b;
+  --user:#173326;
+}
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:ui-monospace,SFMono-Regular,Menlo,Consolas,"Liberation Mono",monospace;
+  background:
+    radial-gradient(circle at 20% 10%,rgba(28,97,55,.18),transparent 35%),
+    radial-gradient(circle at 90% 90%,rgba(16,62,39,.20),transparent 38%),
+    var(--bg);
+  color:var(--text);
+  overflow:hidden;
+}
+.noise{
+  position:fixed; inset:0; pointer-events:none; opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E");
+}
+.app{height:100%; display:grid; place-items:center; padding:18px}
+.screen{
+  width:min(100%, 520px);
+  height:min(100%, 900px);
+  border:1px solid var(--line);
+  background:rgba(6,15,10,.88);
+  box-shadow:0 24px 80px rgba(0,0,0,.55), inset 0 0 80px rgba(19,75,43,.05);
+  border-radius:22px;
+  overflow:hidden;
+  backdrop-filter:blur(12px);
+}
+.hidden{display:none!important}
+
+.gate-screen{display:grid; place-items:center; padding:30px}
+.gate-card{width:100%; max-width:390px}
+.lock-icon{
+  width:74px;height:74px;border:1px solid var(--line);border-radius:50%;
+  display:grid;place-items:center;font-size:38px;color:var(--green);
+  margin:0 auto 26px; box-shadow:0 0 30px rgba(125,255,173,.09);
+}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--green);text-align:center}
+h1{font-size:28px;line-height:1.15;margin:12px 0;text-align:center}
+.muted{text-align:center;color:var(--muted);line-height:1.5;margin-bottom:28px}
+label{display:block;font-size:12px;color:var(--muted);margin-bottom:8px}
+input{
+  width:100%;border:1px solid var(--line);background:#06100b;color:var(--text);
+  border-radius:12px;padding:15px 16px;font:inherit;outline:none;
+}
+input:focus{border-color:rgba(125,255,173,.55);box-shadow:0 0 0 3px rgba(125,255,173,.08)}
+button{font:inherit;cursor:pointer}
+#enterBtn{
+  width:100%;margin-top:12px;padding:14px;border:0;border-radius:12px;
+  background:var(--green);color:#041109;font-weight:800;
+}
+.error{min-height:18px;color:var(--danger);font-size:12px;text-align:center;margin-top:14px}
+
+.chat-screen{display:grid;grid-template-rows:auto 1fr auto}
+.chat-header{
+  display:flex;align-items:center;gap:12px;padding:14px 16px;
+  background:rgba(8,20,14,.96);border-bottom:1px solid var(--line);
+}
+.avatar{
+  width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+  border:1px solid var(--line);color:var(--green);background:#08130d;font-weight:800;
+}
+.chat-header strong{display:block;letter-spacing:.08em;font-size:14px}
+.chat-header span{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.icon-btn{margin-left:auto;background:transparent;color:var(--muted);border:0;font-size:22px}
+
+.messages{
+  overflow:auto;padding:20px 14px 28px;
+  scroll-behavior:smooth;
+}
+.message-row{display:flex;margin:8px 0}
+.message-row.user{justify-content:flex-end}
+.bubble{
+  max-width:84%;padding:11px 13px;border-radius:14px;
+  background:var(--panel-2);border:1px solid rgba(255,255,255,.045);
+  line-height:1.45;font-size:14px;white-space:pre-wrap;
+  box-shadow:0 8px 24px rgba(0,0,0,.15);
+}
+.user .bubble{background:var(--user);border-bottom-right-radius:4px}
+.bot .bubble{border-bottom-left-radius:4px}
+.time{display:block;font-size:9px;color:var(--muted);margin-top:6px;text-align:right}
+
+.typing{display:flex;gap:5px;align-items:center;min-width:58px}
+.typing i{width:6px;height:6px;border-radius:50%;background:var(--muted);animation:b 1.2s infinite}
+.typing i:nth-child(2){animation-delay:.15s}
+.typing i:nth-child(3){animation-delay:.3s}
+@keyframes b{0%,60%,100%{transform:translateY(0);opacity:.45}30%{transform:translateY(-5px);opacity:1}}
+
+.attachment{
+  width:min(310px,78vw);background:#09150f;border:1px solid var(--line);
+  border-radius:14px;overflow:hidden;margin:8px 0;
+}
+.attachment img{width:100%;display:block;max-height:280px;object-fit:cover;cursor:zoom-in}
+.file-body{padding:12px}
+.file-title{font-weight:800;font-size:13px}
+.file-meta{font-size:10px;color:var(--muted);margin-top:5px}
+.file-actions{display:flex;gap:8px;padding:0 12px 12px}
+.file-actions a,.file-actions button{
+  flex:1;text-align:center;text-decoration:none;border:1px solid var(--line);
+  color:var(--green);background:#07110c;padding:9px;border-radius:9px;font-size:11px;
+}
+.evidence-tag{font-size:9px;color:var(--green);letter-spacing:.12em;margin-bottom:5px}
+
+.composer{
+  display:grid;grid-template-columns:1fr auto;gap:10px;padding:12px;
+  border-top:1px solid var(--line);background:rgba(8,20,14,.96);
+}
+.composer button{
+  width:48px;border:0;border-radius:12px;background:var(--green);
+  color:#041109;font-weight:900;
+}
+
+.viewer{
+  position:fixed;inset:0;background:rgba(0,0,0,.92);display:grid;place-items:center;
+  z-index:20;padding:40px 18px;
+}
+.viewer img{max-width:96vw;max-height:90vh;object-fit:contain}
+.viewer-close{
+  position:fixed;top:14px;right:18px;background:transparent;border:0;color:white;font-size:42px
+}
+@media(max-width:600px){
+  .app{padding:0}
+  .screen{width:100%;height:100%;border:0;border-radius:0}
+  .gate-screen{padding:22px}
+}
+
+
+.connection-panel{
+  grid-row:2;
+  align-self:center;
+  justify-self:stretch;
+  margin:24px;
+  padding:22px;
+  border:1px solid var(--line);
+  border-radius:14px;
+  background:rgba(5,14,9,.86);
+  box-shadow:0 14px 40px rgba(0,0,0,.28);
+}
+.connection-title{
+  color:var(--green);
+  font-size:12px;
+  letter-spacing:.11em;
+  margin-bottom:14px;
+}
+.progress-track{
+  height:8px;
+  border-radius:999px;
+  background:#06100b;
+  border:1px solid var(--line);
+  overflow:hidden;
+}
+.progress-bar{
+  width:0%;
+  height:100%;
+  background:var(--green);
+  transition:width .7s ease;
+  box-shadow:0 0 18px rgba(125,255,173,.45);
+}
+.connection-text{
+  margin-top:12px;
+  color:var(--muted);
+  font-size:11px;
+}
+.chat-screen.connecting .messages{display:none}

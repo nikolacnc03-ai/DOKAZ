@@ -1,0 +1,1 @@
+Raspakuj ZIP u jedan folder i otvori index.html. Linkovi Hronika <-> Politika su relativni i rade ako se ne otvara direktno iz ZIP-a.

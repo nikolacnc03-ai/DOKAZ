@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+  <meta name="theme-color" content="#07110d">
+  <title>Privatni kanal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="noise"></div>
+
+  <main class="app">
+    <section id="gate" class="screen gate-screen">
+      <div class="gate-card">
+        <div class="lock-icon">⌁</div>
+        <p class="eyebrow">ZAŠTIĆENI KOMUNIKACIONI KANAL</p>
+        <h1>Unesite pronađeni broj</h1>
+        <p class="muted">Pristup razgovoru moguć je samo preko registrovanog kontakta.</p>
+
+        <label for="phone">Broj telefona</label>
+        <input id="phone" inputmode="tel" autocomplete="off" placeholder="06X XXX XXXX">
+        <button id="enterBtn">Poveži se</button>
+        <p id="gateError" class="error" aria-live="polite"></p>
+      </div>
+    </section>
+
+    <section id="chatScreen" class="screen chat-screen hidden">
+      <header class="chat-header">
+        <div class="avatar">?</div>
+        <div>
+          <strong>NEPOZNAT KONTAKT</strong>
+          <span id="status">šifrovana veza</span>
+        </div>
+        <button id="resetBtn" class="icon-btn" title="Resetuj igru">↻</button>
+      </header>
+
+      <div id="connectionPanel" class="connection-panel hidden">
+        <div class="connection-title">USPOSTAVLJANJE ŠIFROVANE VEZE...</div>
+        <div class="progress-track"><div id="progressBar" class="progress-bar"></div></div>
+        <div id="connectionText" class="connection-text">Provera kanala...</div>
+      </div>
+
+      <div id="messages" class="messages" aria-live="polite"></div>
+
+      <form id="chatForm" class="composer hidden">
+        <input id="messageInput" autocomplete="off" placeholder="Napišite poruku…" maxlength="220">
+        <button type="submit" aria-label="Pošalji">➤</button>
+      </form>
+    </section>
+  </main>
+
+  <div id="viewer" class="viewer hidden" role="dialog" aria-modal="true">
+    <button id="closeViewer" class="viewer-close">×</button>
+    <img id="viewerImage" alt="Dokaz">
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

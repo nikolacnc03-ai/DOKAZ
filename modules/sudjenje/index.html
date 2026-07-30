@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Više javno tužilaštvo | Simulacija suđenja</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="court-bg"></div>
+  <div class="grain"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar glass-panel">
+      <div class="seal">VJT</div>
+      <div>
+        <h1>Simulacija suđenja</h1>
+        <p>Više javno tužilaštvo</p>
+      </div>
+      <nav class="steps">
+        <button class="step active" data-step="0"><span>01</span> Predmet</button>
+        <button class="step" data-step="1"><span>02</span> Osumnjičeni</button>
+        <button class="step" data-step="2"><span>03</span> Dokazi</button>
+        <button class="step" data-step="3"><span>04</span> Motiv</button>
+        <button class="step" data-step="4"><span>05</span> Sud</button>
+      </nav>
+      <div class="mini-card">
+        <b>Policijski inspektor</b>
+        <strong>Nikola Radić</strong>
+        <p>Po nalogu javnog tužioca prikuplja, evidentira i dostavlja materijal u spis predmeta.</p>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar glass-panel">
+        <div>
+          <span class="eyebrow">Predmet u radu</span>
+          <h2 id="topTitle">Događaj u restoranu „Kaldrma”</h2>
+        </div>
+        <div class="people-strip">
+          <article class="person-badge prosecutor">
+            <img src="assets/img/people/javni_tuzilac_milena_kovacevic.jpg" alt="Javni tužilac Milena Kovačević">
+            <div><span>Javni tužilac</span><b>Milena Kovačević</b></div>
+          </article>
+          <article class="person-badge judge">
+            <img src="assets/img/people/sudija_ljiljana_markovic.jpg" alt="Sudija Ljiljana Marković">
+            <div><span>Sudija Višeg suda</span><b>Ljiljana Marković</b></div>
+          </article>
+        </div>
+      </header>
+
+      <section class="content glass-panel">
+        <div class="progress"><i id="progressBar"></i></div>
+
+        <section class="screen active" data-screen="0">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Elektronski spis</span>
+              <h3>Unos broja predmeta</h3>
+              <p>Unesite broj predmeta kako bi javni tužilac mogao da pristupi postupku i započne formiranje optužnice.</p>
+              <label class="field-label">Broj predmeta</label>
+              <input id="caseNumber" class="text-input" placeholder="Unesite broj predmeta" />
+            </div>
+            <div class="court-card">
+              <div class="court-icon">⚖</div>
+              <h4>Viši sud u Beogradu</h4>
+              <p>Predmet se proverava po službenoj dužnosti. Svaki korak mora biti potvrđen pre prelaska dalje.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="1">
+          <span class="eyebrow">Izbor lica</span>
+          <h3>Osumnjičena lica</h3>
+          <p class="screen-desc">Izaberite lice za koje smatrate da postoje osnovi sumnje da je učestvovalo u izvršenju krivičnog dela.</p>
+          <div class="suspect-grid" id="suspectGrid"></div>
+        </section>
+
+        <section class="screen" data-screen="2">
+          <span class="eyebrow">Materijalni dokazi</span>
+          <h3>Kategorije dokaza</h3>
+          <p class="screen-desc">Priložite dokaze po kategorijama. Brojač pokazuje koliko fajlova treba priložiti, ali ne otkriva koji konkretan dokaz je obavezan.</p>
+          <div class="evidence-grid" id="evidenceGrid"></div>
+        </section>
+
+        <section class="screen" data-screen="3">
+          <span class="eyebrow">Činjenično stanje</span>
+          <h3>Motiv izvršenja krivičnog dela</h3>
+          <p class="screen-desc">Navedite motiv izvršenja krivičnog dela. Ukoliko navedeni motiv nije u dovoljnoj meri usklađen sa činjeničnim stanjem i dokazima sadržanim u predmetu, optužnica neće biti prihvaćena.</p>
+          <textarea id="motive" class="motive-box" placeholder="Ovde upišite motiv..."></textarea>
+        </section>
+
+        <section class="screen" data-screen="4">
+          <div class="judgement-stage">
+            <div class="judge-photo"><img src="assets/img/people/sudija_ljiljana_markovic.jpg" alt="Sudija Ljiljana Marković"></div>
+            <div class="verdict-box">
+              <span class="eyebrow">Sudska provera</span>
+              <h3>Podnošenje optužnice</h3>
+              <p id="verdictText">Sud će proveriti izabrano lice, broj priloženih dokaza po kategorijama i usklađenost motiva sa činjeničnim stanjem.</p>
+              <button id="submitIndictment" class="primary big">Podnesi sudu</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button id="backBtn" class="ghost">Nazad</button>
+          <div class="status" id="statusText">Popunite podatke i kliknite Potvrdi.</div>
+          <button id="confirmBtn" class="secondary">Potvrdi ✓</button>
+          <button id="nextBtn" class="primary" disabled>Dalje</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <div id="epilogueOverlay" class="epilogue-overlay" aria-hidden="true">
+    <div class="epilogue-card">
+      <button id="closeEpilogue" class="epilogue-close" aria-label="Zatvori">×</button>
+      <div class="secure-head">
+        <span class="secure-dot"></span> ŠIFROVANI KANAL · VEZA USPOSTAVLJENA
+      </div>
+      <div class="chat-thread" id="chatThread">
+        <div class="message milica"><b>Milica</b><p>Nikola… da li je gotovo?</p></div>
+      </div>
+      <div class="epilogue-actions" id="epilogueActions">
+        <button id="replyVerdict" class="primary">Presuda je doneta.</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

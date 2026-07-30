@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="sr-Latn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kriminalistički GIS — Predmet K-0426</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="booting">
+  <div id="bootScreen" class="boot-screen" aria-live="polite">
+    <div class="boot-scanline"></div>
+    <div class="boot-panel">
+      <div class="boot-seal">MUP</div>
+      <div class="boot-kicker">MINISTARSTVO UNUTRAŠNJIH POSLOVA</div>
+      <h2>Kriminalistički informacioni sistem</h2>
+      <p class="boot-module">GIS modul · bezbedna veza</p>
+      <div class="boot-log" id="bootLog"></div>
+      <div class="boot-progress" aria-label="Učitavanje sistema">
+        <span id="bootProgressBar"></span>
+      </div>
+      <div class="boot-percent" id="bootPercent">0%</div>
+      <div class="boot-access hidden" id="bootAccess">
+        <strong>AUTORIZACIJA USPEŠNA</strong>
+        <span>Policijski inspektor Nikola Radić</span>
+        <em>PRISTUP ODOBREN</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="crest">MUP</div>
+        <div><h1>Kriminalistički GIS</h1><p>Uprava kriminalističke policije · Interni sistem</p></div>
+      </div>
+      <div class="case-chip"><span>Predmet</span><strong>K-0426/26</strong></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="panel-title">Pretraga lokacije</div>
+          <label for="locationInput">Naziv, trag ili koordinate</label>
+          <div class="search-row">
+            <input id="locationInput" type="text" placeholder="Unesite podatak" autocomplete="off" />
+            <button id="searchBtn">Pretraži</button>
+          </div>
+          <p class="hint">Sistem prihvata naziv lokacije, šifru sektora ili GPS koordinate.</p>
+          <div id="searchStatus" class="status idle">Čeka se unos...</div>
+        </section>
+
+        <section class="panel case-info">
+          <div class="panel-title">Podaci o predmetu</div>
+          <dl>
+            <div><dt>Žrtva</dt><dd>Milan Balović</dd></div>
+            <div><dt>Datum pronalaska</dt><dd>24.04.2026.</dd></div>
+            <div><dt>Inspektor</dt><dd>Nikola Radić</dd></div>
+            <div><dt>Status</dt><dd><span class="status-pill">Aktivna istraga</span></dd></div>
+          </dl>
+        </section>
+
+        <section class="panel map-info">
+          <div class="panel-title">Prikaz mape</div>
+          <p>Satelitski snimak bez naziva lokacija, objekata i puteva. Za učitavanje snimka potrebna je internet veza.</p>
+        </section>
+
+        <section id="resultCard" class="panel result-card hidden">
+          <div class="eyebrow">Rezultat pretrage</div>
+          <h2>Mesto pronalaska tela</h2>
+          <p>Šumski sektor VV-07 · severna padina</p>
+          <div class="result-grid"><span>44.3118 N</span><span>20.5324 E</span></div>
+          <button id="focusCrimeScene" class="secondary-btn">Prikaži na mapi</button>
+        </section>
+      </aside>
+
+      <section class="map-area">
+        <div class="map-toolbar">
+          <div class="map-mode"><span class="mode active">Satelitski GIS prikaz</span></div>
+          <div class="coords" id="cursorCoords">44.3118 N · 20.5324 E</div>
+        </div>
+        <div id="mapViewport" class="map-viewport" aria-label="Interaktivna satelitska mapa"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="sceneModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="sceneTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div><div class="eyebrow">Forenzička dokumentacija</div><h2 id="sceneTitle">Fotografija mesta pronalaska</h2></div>
+        <button class="close-btn" data-close-modal aria-label="Zatvori">×</button>
+      </div>
+      <div class="evidence-frame">
+        <button class="image-close-btn" data-close-modal aria-label="Zatvori fotografiju" title="Zatvori fotografiju"><span aria-hidden="true">×</span></button>
+        <img src="assets/mesto_pronalaska.png" alt="Fotografija mesta pronalaska tela" />
+        <div class="evidence-stamp">DOKAZ · FOTO 01</div>
+      </div>
+      <div class="modal-footer">
+        <div><strong>Lokacija:</strong> VV-07, severna padina<br><strong>Koordinate:</strong> 44.3118 N, 20.5324 E</div>
+        <div class="modal-actions">
+          <button id="downloadPhoto" class="download-btn" type="button">Preuzmi ponovo</button>
+          <button id="registerEvidence">Evidentiraj fotografiju</button>
+        </div>
+      </div>
+      <div id="downloadNotice" class="evidence-notice hidden">Fotografija je automatski preuzeta kao <strong>Slika_pronadjenog_tela.png</strong>.</div>
+      <div id="evidenceNotice" class="evidence-notice hidden">Fotografija je evidentirana u predmetu K-0426/26.</div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>

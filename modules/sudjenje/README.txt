@@ -1,0 +1,1 @@
+Verzija v7: popravljena sudska provera. Zelene kategorije znace da je dokumentacija formalno popunjena, ali presuda dodatno proverava izbor osumnjicenog i motiv. Motiv se prepoznaje fleksibilno preko korena reci za gradjevinsko zemljiste.

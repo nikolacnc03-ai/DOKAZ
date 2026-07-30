@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="sr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+  <title>Telefon žrtve — Milan Balović Bale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="stage">
+<section class="phone-shell" aria-label="Telefon">
+      <div class="speaker"></div>
+      <div class="camera-dot"></div>
+      <div id="screen" class="screen">
+        <div id="statusBar" class="status-bar">
+          <span id="statusTime">21:53</span>
+          <span>▮▮▮  Wi‑Fi  64%</span>
+        </div>
+
+        <section id="lockScreen" class="view lock-screen active">
+          <div class="lock-wallpaper"></div>
+          <div class="crack-layer" aria-hidden="true"><span class="crack crack-a"></span><span class="crack crack-b"></span><span class="crack crack-c"></span><span class="crack crack-d"></span><span class="crack crack-e"></span></div>
+          <div class="lock-overlay pin-lock">
+            <div class="lock-icon">🔒</div><div class="pin-time">21:53</div><div class="lock-date">Petak, 24. april</div>
+            <div class="pin-heading">Unesite PIN</div>
+            <div id="pinDots" class="pin-dots"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div id="pinError" class="pin-error" aria-live="polite"></div>
+            <div id="pinPad" class="pin-pad">
+              <button type="button" data-digit="1">1<small></small></button><button type="button" data-digit="2">2<small>ABC</small></button><button type="button" data-digit="3">3<small>DEF</small></button>
+              <button type="button" data-digit="4">4<small>GHI</small></button><button type="button" data-digit="5">5<small>JKL</small></button><button type="button" data-digit="6">6<small>MNO</small></button>
+              <button type="button" data-digit="7">7<small>PQRS</small></button><button type="button" data-digit="8">8<small>TUV</small></button><button type="button" data-digit="9">9<small>WXYZ</small></button>
+              <button type="button" class="pin-empty" disabled></button><button type="button" data-digit="0">0<small>+</small></button><button type="button" id="pinDelete">⌫</button>
+            </div><div class="emergency">HITAN POZIV</div>
+          </div>
+        </section>
+
+        <section id="homeScreen" class="view home-screen">
+          <div class="home-wallpaper"></div>
+          <div class="home-content">
+            <div class="home-weather">
+              <span>21:53</span>
+              <small>14°C · Beograd</small>
+            </div>
+            <div class="app-grid" id="appGrid"></div>
+            <div class="dock">
+              <button data-app="phone">📞<span>Telefon</span></button>
+              <button data-app="messages">💬<span>Poruke</span></button>
+              <button data-app="chrome">🌐<span>Chrome</span></button>
+              <button data-app="camera">📷<span>Kamera</span></button>
+            </div>
+          </div>
+        </section>
+
+        <section id="appView" class="view app-view">
+          <header class="app-header">
+            <button id="backBtn" class="icon-btn">‹</button>
+            <div>
+              <strong id="appTitle">Aplikacija</strong>
+              <small id="appSubtitle"></small>
+            </div>
+            <button id="homeBtn" class="icon-btn">⌂</button>
+          </header>
+          <div id="appContent" class="app-content"></div>
+        </section>
+
+        <nav class="android-nav">
+          <button id="navBack">◁</button>
+          <button id="navHome">○</button>
+          <button id="navRecent">▢</button>
+        </nav>
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

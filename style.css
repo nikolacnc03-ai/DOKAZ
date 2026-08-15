@@ -8,3 +8,15 @@ main{grid-column:2;padding:0 32px 50px}.topbar{height:86px;border-bottom:1px sol
 @media(max-width:1000px){.cards,.stats{grid-template-columns:repeat(2,1fr)}.people{grid-template-columns:1fr}.userbox>div:nth-child(2){display:none}}@media(max-width:700px){.app{display:block}.sidebar{position:static;width:auto;height:auto}.sidebar nav{display:flex;overflow:auto}.nav{min-width:180px}.sidebar-foot{display:none}main{padding:0 16px}.topbar{height:auto;padding:16px 0}.cards,.stats,.docgrid{grid-template-columns:1fr}.timeline div{padding-left:0;padding-top:35px}.viewer{padding:60px 8px 20px}}
 
 .media-warning{display:flex;gap:14px;align-items:flex-start;margin-bottom:16px;padding:14px 16px;background:#211d10;border:1px solid #65562b;border-left:4px solid var(--amber);border-radius:6px}.media-warning b{color:#e5b85b;font-size:10px;letter-spacing:1px;white-space:nowrap}.media-warning span{color:#b9a982;font-size:11px;line-height:1.5}
+
+/* Dokumenti koji su linkovi (.docx/PDF) — isti izgled kao postojeća .doc dugmad */
+a.doc{
+  text-decoration:none;
+  width:100%;
+  font-family:inherit;
+}
+a.doc:visited{color:inherit}
+a.doc:focus-visible{
+  outline:2px solid var(--blue);
+  outline-offset:2px;
+}

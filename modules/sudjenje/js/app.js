@@ -218,7 +218,40 @@ function allPreviousStepsConfirmed(){
 function submitIndictment(){
   const suspectOk = state.selectedSuspect === 'aleksandar';
   const motive = normalizeText(document.getElementById('motive').value);
-  const motiveOk = motive.includes('gradjevin') && motive.includes('zemlj');
+
+const motiveKeywords = [
+  'gradjevinsko zemljiste',
+  'gradjevinskog zemljista',
+  'gradjevinskom zemljistu',
+  'gradjevinska parcela',
+  'gradjevinske parcele',
+  'gradjevinskoj parceli',
+  'zemljiste za izgradnju',
+  'plac za izgradnju',
+  'plac',
+  'placevi',
+  'placa',
+  'placu',
+  'imanje',
+  'imanja',
+  'imanju',
+  'gradiliste',
+  'gradilista',
+  'gradilistu',
+  'gradjevina',
+  'gradjevine',
+  'gradjevini',
+  'zemljiste',
+  'zemljista',
+  'zemljistu',
+  'parcela',
+  'parcele',
+  'parceli',
+  'nekretnina',
+  'nekretnine',
+  'nekretnini'
+];
+ const motiveOk = motiveKeywords.some(keyword => motive.includes(keyword));
   const evidenceOk = categories.every(c => state.files[c.id].length >= c.required);
   const noWrongCategory = categories.every(c => state.categoryStatus[c.id] !== 'wrong');
   const stepsOk = allPreviousStepsConfirmed();

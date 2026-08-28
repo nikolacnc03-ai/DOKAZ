@@ -138,8 +138,7 @@ async function handleOnboarding(raw){
   "kaldrma","kaldrme","iz kaldrme","u kaldrmi","kod kaldrme",
   "restoran","restorana","iz restorana","u restoranu","kod restorana",
 
-  "kartica","kartice","sa kartice","na kartici",
-  "vizit karta","vizitkarta","vizitke","sa vizitke",
+  "kart","vizit",
 
   "njegove stvari","stvari zrtve","kod zrtve",
   "u dzepu","iz dzepa","dzep",

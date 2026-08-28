@@ -300,12 +300,42 @@ async function sendCameras(){
   await bot("Upravo sam uspeo da pristupim starom serveru restorana.",1300);
   await bot("Nemam mnogo vremena.",1000);
   await bot("Imam nešto za tebe što će ti otvoriti oči.",1300);
-  addAttachment({title:"CAM 03 — 24.04.2026. 00:43:15",file:"assets/kamera_1.png",image:true,meta:"VIDEO-NADZOR"});
+
+  addAttachment({
+    title:"CAM 03 — 24.04.2026. 00:43:15",
+    file:"assets/kamera_1.png",
+    image:true,
+    meta:"VIDEO-NADZOR"
+  });
+
   await sleep(1200);
-  addAttachment({title:"CAM 04 — 24.04.2026. 01:17:32",file:"assets/kamera_2.png",image:true,meta:"VIDEO-NADZOR"});
+
+  addAttachment({
+    title:"CAM 04 — 24.04.2026. 01:17:32",
+    file:"assets/kamera_2.png",
+    image:true,
+    meta:"VIDEO-NADZOR"
+  });
+
   await sleep(1200);
-  addAttachment({title:"CAM 01 — 24.04.2026. 01:47:23",file:"assets/kamera_3.png",image:true,meta:"VIDEO-NADZOR"});
-  await bot("Pogledaj ih pažljivo.\n\nPosle ovoga ćeš drugačije gledati na ceo slučaj.",1200);
+
+  addAttachment({
+    title:"CAM 01 — 24.04.2026. 01:47:23",
+    file:"assets/kamera_3.png",
+    image:true,
+    meta:"VIDEO-NADZOR"
+  });
+
+  await bot(
+    "Pogledaj ih pažljivo.\n\nPosle ovoga ćeš drugačije gledati na ceo slučaj.\n\nNe kontaktiraj me više.",
+    1200
+  );
+
+  // Kontakt prekida vezu
+  await sleep(1800);
+
+  statusEl.textContent = "offline";
+  composer.classList.add("hidden");
 }
 
 $("#enterBtn").addEventListener("click", async ()=>{

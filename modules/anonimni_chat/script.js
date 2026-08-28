@@ -216,6 +216,7 @@ async function handleMessage(raw){
     await bot("Neko ga je zamenio pre nego što je stigao u predmet.");
     await bot("Ne pitaj kako znam. Samo ga sačuvaj.");
     addAttachment({title:"PRAVI OBDUKCIONI IZVEŠTAJ",file:"assets/pravi_obdukcioni_izvestaj.png",image:true,meta:"ORIGINAL"});
+    await bot("Uporedi ga sa onim što već imaš.\n\nAko primetiš razliku, pitaj me za nju.", 1400);
     persistEvidence("autopsy"); return;
   }
 
@@ -225,8 +226,9 @@ async function handleMessage(raw){
     await bot("Namerno je ostavljena šifrovana.");
     await bot("Oni nisu računali da će neko imati originalni ključ.");
     await bot("Evo dešifrovane verzije.");
-    addAttachment({title:"DEŠIFROVANA PREPISKA",file:"assets/desifrovana_prepiska.txt",type:"txt",meta:"DEŠIFROVANO"});
-    persistEvidence("chat"); return;
+   addAttachment({title:"DEŠIFROVANA PREPISKA",file:"assets/desifrovana_prepiska.txt",type:"txt",meta:"DEŠIFROVANO"});
+await bot("Nemoj da se zaustaviš na samoj prepisci.\n\nU njoj ima još stvari o kojima treba da me pitaš.", 1400);
+persistEvidence("chat"); return;
   }
 
   if(keywordMatch(t,["milan stojanovic","vlasnik","gazda","vlasnik restorana","stojanovic"])){
@@ -234,8 +236,9 @@ async function handleMessage(raw){
     await bot("Vlasnik restorana nije rekao sve policiji.");
     await bot("Plašio se za restoran i porodicu.");
     await bot("Ovo je razgovor koji nikada nije završio u predmetu.");
-    addAttachment({title:"RAZGOVOR SA MILANOM STOJANOVIĆEM",file:"assets/razgovor_milan_stojanovic.docx",type:"docx",meta:"NEZVANIČNI RAZGOVOR"});
-    persistEvidence("milan"); return;
+   addAttachment({title:"RAZGOVOR SA MILANOM STOJANOVIĆEM",file:"assets/razgovor_milan_stojanovic.docx",type:"docx",meta:"NEZVANIČNI RAZGOVOR"});
+await bot("Pročitaj njegovu izjavu pažljivo.\n\nNeke stvari u njoj traže dodatna pitanja.", 1400);
+persistEvidence("milan"); return;
   }
 
   if(keywordMatch(t,["danijel","danijel ilic","konobar","posluzio","viski","vino","osoblje"])){
@@ -244,7 +247,8 @@ async function handleMessage(raw){
     await bot("Ne mislim da laže.");
     await bot("Ali sigurno nije rekao baš sve.");
     addAttachment({title:"ZAPISNIK — DANIJEL ILIĆ",file:"assets/zapisnik_danijel_ilic.docx",type:"docx",meta:"SLUŽBENI ZAPISNIK"});
-    persistEvidence("danijel"); return;
+await bot("Nemoj njegovu izjavu da uzmeš zdravo za gotovo.\n\nPitaj me o detaljima koji ti deluju čudno.", 1400);
+persistEvidence("danijel"); return;
   }
 
   if(keywordMatch(t,["ko si","tvoje ime","kako se zoves"])){

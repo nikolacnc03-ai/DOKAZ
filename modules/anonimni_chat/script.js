@@ -132,10 +132,20 @@ async function handleOnboarding(raw){
   const t = normalize(raw);
 
   const mentionsSource = keywordMatch(t,[
-    "milan balovic","balovic","bale","baleta","milanove stvari",
-    "njegove stvari","stvari zrtve","kod zrtve","u dzepu","u novcaniku",
-    "vizit karta","vizitkarta","licne stvari","predmeti zrtve"
-  ]);
+  "milan balovic","balovic","bale","baleta","od baleta","od bale",
+  "od milana","milanov","milanove stvari",
+
+  "kaldrma","kaldrme","iz kaldrme","u kaldrmi","kod kaldrme",
+  "restoran","restorana","iz restorana","u restoranu","kod restorana",
+
+  "kartica","kartice","sa kartice","na kartici",
+  "vizit karta","vizitkarta","vizitke","sa vizitke",
+
+  "njegove stvari","stvari zrtve","kod zrtve",
+  "u dzepu","iz dzepa","dzep",
+  "u novcaniku","iz novcanika","novcanik",
+  "licne stvari","predmeti zrtve"
+]);
 
   if(onboardingStage === 1){
     if(mentionsSource){

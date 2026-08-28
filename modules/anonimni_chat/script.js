@@ -281,14 +281,14 @@ persistEvidence("danijel"); return;
     return bot("Nemam ništa što mogu da ti pošaljem. Još.");
   }
 
-  const fallbacks = [
-    "Budi precizniji.",
-    "Ne mogu o tome preko ovog kanala.",
-    "Postavi pravo pitanje.",
-    "Traži ono što nedostaje u predmetu.",
-    "Ne veruj svemu što piše u zvaničnim dokumentima."
-  ];
-  return bot(fallbacks[Math.floor(Math.random()*fallbacks.length)]);
+const fallbacks = [
+  "Na takve stvari ti ne mogu dati odgovor.\n\nPitaj me samo ono što je vezano za dokumente i dokaze koje imaš.",
+  "Ne mogu da razgovaram o stvarima koje nisu vezane za predmet.\n\nPogledaj dokumente koje imaš i pitaj me o onome što ti u njima nije jasno.",
+  "Drži se dokumentacije.\n\nAko si primetio neku nelogičnost, pitaj me konkretno o njoj.",
+  "Ne mogu ti pomoći sa tim pitanjem.\n\nPitaj me nešto vezano za izjave, prepisku, obdukciju ili druge dokaze iz predmeta."
+];
+
+return bot(fallbacks[Math.floor(Math.random()*fallbacks.length)]);
 }
 
 function maybeSendCameras(){

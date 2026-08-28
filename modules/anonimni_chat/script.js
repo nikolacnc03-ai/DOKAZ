@@ -148,16 +148,19 @@ async function handleOnboarding(raw){
 ]);
 
   if(onboardingStage === 1){
-    if(mentionsSource){
-      await bot("…", 1500);
-      await bot("Nemoguće.", 1300);
-      await bot("Taj broj nije trebalo niko da pronađe.", 1300);
-      await bot("Znači ipak je mrtav…", 1800);
-      await bot("Dobro.\n\nPitaj šta želiš da znaš.", 1400);
-      onboardingStage = 99;
-      onboardingComplete = true;
-      return true;
-    }
+  if(mentionsSource){
+  await bot("…", 1500);
+  await bot("Nemoguće.", 1300);
+  await bot("Taj broj nije trebalo niko da pronađe.", 1300);
+  await bot("Znači ipak je mrtav…", 1800);
+  await bot("Nadam se da si pažljivo pročitao sve dokumente koje imaš u papirnoj formi.", 1500);
+  await bot("I da si već primetio da neke stvari u njima nisu logične.", 1500);
+  await bot("Ako jesi… pitaj šta želiš da znaš.", 1400);
+
+  onboardingStage = 99;
+  onboardingComplete = true;
+  return true;
+}
 
     if(keywordMatch(t,["ko si","ko je ovo","ime","kako se zoves"])){
       await bot("Prvo mi reci kako si došao do ovog broja.", 1200);
@@ -183,17 +186,19 @@ async function handleOnboarding(raw){
   }
 
   if(onboardingStage === 2){
-    if(mentionsSource){
-      await bot("…", 1500);
-      await bot("Nemoguće.", 1300);
-      await bot("Taj broj nije trebalo niko da pronađe.", 1300);
-      await bot("Znači ipak je mrtav…", 1800);
-      await bot("Dobro.\n\nPitaj šta želiš da znaš.", 1400);
-      onboardingStage = 99;
-      onboardingComplete = true;
-      return true;
-    }
+if(mentionsSource){
+  await bot("…", 1500);
+  await bot("Nemoguće.", 1300);
+  await bot("Taj broj nije trebalo niko da pronađe.", 1300);
+  await bot("Znači ipak je mrtav…", 1800);
+  await bot("Nadam se da si pažljivo pročitao sve dokumente koje imaš u papirnoj formi.", 1500);
+  await bot("I da si već primetio da neke stvari u njima nisu logične.", 1500);
+  await bot("Ako jesi… pitaj šta želiš da znaš.", 1400);
 
+  onboardingStage = 99;
+  onboardingComplete = true;
+  return true;
+}
     await bot("Budi precizniji.\n\nGde si tačno našao broj?", 1200);
     return true;
   }

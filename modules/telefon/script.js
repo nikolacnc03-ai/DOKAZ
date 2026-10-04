@@ -34,8 +34,8 @@ const data={
  ],
  signal:[
   {name:"M",last:"Ako ti se ne javim do 22:30, otvori USB.",time:"21:12",msgs:[
-    ["me","USB je spreman.","20:56"],["them","Šifra?","20:57"],["me","Ona koju smo dogovorili. KT25626.","20:58"],
-    ["me","Ako ti se ne javim do 22:30, otvori USB.","21:12"],["them","A drugi kontejner?","21:13"],["me","MOST26.","21:14"]
+    ["me","USB je spreman.","20:56"],["them","Šifra?","20:57"],["me","Ona koju smo dogovorili. BALE0422.","20:58"],
+    ["me","Ako ti se ne javim do 22:30, otvori USB.","21:12"],["them","A drugi kontejner?","21:13"],["me","Ostavio sam trag u svesci. Nemoj da ga šalješ porukom.","21:14"]
   ]},
   {name:"P.",last:"Ne veruj čoveku sa značkom.",time:"20:41",msgs:[
     ["them","Ne veruj čoveku sa značkom.","20:41"],["them","Poručnik radi za njih.","20:41"],["me","Koji poručnik?","20:42"],["them","Ne mogu ovde.","20:43"]
@@ -49,7 +49,7 @@ const data={
   ["Poručnik","Skriven broj","Ne unositi pravo ime"]
  ],
  notes:[
-  ["VAŽNO","MOST26\n\nNe veruj nikome.\nAko nestanem, USB i sveska moraju ostati zajedno.\nPoručnik zna za gradilište."],
+  ["VAŽNO","Ne veruj nikome.\nAko nestanem, USB i sveska moraju ostati zajedno.\nKljuč za drugi kontejner ostavio sam u svesci.\nPoručnik zna za gradilište."],
   ["Sastanak","Kaldrma — 22:00\nViktor + Nebojša\nNe nositi originalna dokumenta."],
   ["Uplate","48 — BCI / konsultantske usluge\n73 — izvođač bez ugovora\n91 — gotovina"]
  ],

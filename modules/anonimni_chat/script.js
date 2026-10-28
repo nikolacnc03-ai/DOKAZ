@@ -220,7 +220,7 @@ async function handleMessage(raw){
     await bot("Neko ga je zamenio pre nego što je stigao u predmet.");
     await bot("Ne pitaj kako znam. Samo ga sačuvaj.");
     addAttachment({title:"PRAVI OBDUKCIONI IZVEŠTAJ",file:"assets/pravi_obdukcioni_izvestaj.png",image:true,meta:"ORIGINAL"});
-    await bot("Uporedi ga sa onim što već imaš.\n\nAko primetiš razliku, pitaj me za nju.", 1400);
+    await bot("Uporedi ga sa onim što već imaš.\n\nNadam se da ćeš pronaći razliku.", 1400);
     persistEvidence("autopsy"); return;
   }
 
@@ -231,7 +231,7 @@ async function handleMessage(raw){
     await bot("Oni nisu računali da će neko imati originalni ključ.");
     await bot("Evo dešifrovane verzije.");
    addAttachment({title:"DEŠIFROVANA PREPISKA",file:"assets/desifrovana_prepiska.txt",type:"txt",meta:"DEŠIFROVANO"});
-await bot("Nemoj da se zaustaviš na samoj prepisci.\n\nU njoj ima još stvari o kojima treba da me pitaš.", 1400);
+await bot("Nemoj da se zaustaviš na samoj prepisci.\n\nČim pročitaš prepisku, obrati pažnju na papirne dokumente.", 1400);
 persistEvidence("chat"); return;
   }
 
@@ -241,7 +241,7 @@ persistEvidence("chat"); return;
     await bot("Plašio se za restoran i porodicu.");
     await bot("Ovo je razgovor koji nikada nije završio u predmetu.");
    addAttachment({title:"RAZGOVOR SA MILANOM STOJANOVIĆEM",file:"assets/razgovor_milan_stojanovic.docx",type:"docx",meta:"NEZVANIČNI RAZGOVOR"});
-await bot("Pročitaj njegovu izjavu pažljivo.\n\nNeke stvari u njoj traže dodatna pitanja.", 1400);
+await bot("Pročitaj njegovu izjavu pažljivo.", 1400);
 persistEvidence("milan"); return;
   }
 
@@ -251,7 +251,7 @@ persistEvidence("milan"); return;
     await bot("Ne mislim da laže.");
     await bot("Ali sigurno nije rekao baš sve.");
     addAttachment({title:"ZAPISNIK — DANIJEL ILIĆ",file:"assets/zapisnik_danijel_ilic.docx",type:"docx",meta:"SLUŽBENI ZAPISNIK"});
-await bot("Nemoj njegovu izjavu da uzmeš zdravo za gotovo.\n\nPitaj me o detaljima koji ti deluju čudno.", 1400);
+await bot("Nemoj njegovu izjavu da uzmeš zdravo za gotovo.\n\nNije osoba kojoj se treba verovati.", 1400);
 persistEvidence("danijel"); return;
   }
 

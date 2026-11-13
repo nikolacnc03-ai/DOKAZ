@@ -1,7 +1,7 @@
 const suspects = [
   { id:'aleksandar', name:'Aleksandar Ilić', role:'Aca Slina', img:'assets/img/suspects/aleksandar_ilic.jpg' },
   { id:'nebojsa', name:'Nebojša Janković', role:'Knez', img:'assets/img/suspects/nebojsa_jankovic.jpg' },
-  { id:'nenad', name:'Nenad Lazić', role:'Poručnik', img:'assets/img/suspects/nenad_lazic.jpg' },
+ { id:'nenad', name:'NN lice', role:'Identitet nepoznat', img:'assets/img/suspects/nn_lice.png' },
   { id:'danijel', name:'Danijel Ilić', role:'Konobar', img:'assets/img/suspects/danijel_ilic.jpg' },
   { id:'milan', name:'Milan Stojanović', role:'Vlasnik restorana', img:'assets/img/suspects/milan_stojanovic.jpg' },
   { id:'iva', name:'Iva Mitrović', role:'Povezano lice', img:'assets/img/suspects/iva_mitrovic.jpg' }

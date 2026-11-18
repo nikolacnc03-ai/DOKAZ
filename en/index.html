@@ -38,7 +38,10 @@
       <header class="topbar">
         <div>
           <h1 id="viewTitle">Dashboard</h1>
-          <a href="../index.html" lang="sr-Latn">Srpski (SR)</a>
+          <div class="language-switch" role="group" aria-label="Language">
+            <a href="../index.html" lang="sr-Latn" hreflang="sr-Latn" aria-label="Srpski">SR</a>
+            <span aria-current="page" lang="en" aria-label="English">EN</span>
+          </div>
           <p>Case <b>KT256/26</b> · Investigation into the murder of Milan Balović</p>
         </div>
         <div class="userbox">
@@ -100,9 +103,18 @@
       <section id="persons" class="view">
         <div class="section-head"><div><h2>People and Intelligence Files</h2><p>Central register of people linked to the case</p></div><span class="classification">RESTRICTED ACCESS</span></div>
         <div class="people">
-          <button class="person" data-img="evidence/dosijei/milan_balovic_bale.png"><div class="avatar">MB</div><div><h3>Milan Balović „Bale“</h3><p>Victim · Person of interest</p><span class="tag gray">DECEASED</span></div></button>
-          <button class="person" data-img="evidence/dosijei/aleksandar_ilic_aco_slina.png"><div class="avatar">AI</div><div><h3>Aleksandar Ilić „Aco Slina“</h3><p>Suspect · Repeat offender</p><span class="tag red">HIGH RISK</span></div></button>
-          <button class="person" data-img="evidence/dosijei/nebojsa_jankovic.png"><div class="avatar">NJ</div><div><h3>Nebojša Janković</h3><p>Person of interest</p><span class="tag amber">UNDER INVESTIGATION</span></div></button>
+          <article class="person-card">
+            <button class="person" data-img="evidence/dosijei/milan_balovic_bale.png"><div class="avatar">MB</div><div><h3>Milan Balović „Bale“</h3><p>Victim · Person of interest</p><span class="tag gray">DECEASED</span></div></button>
+            <a class="person-download" href="evidence/dosijei/milan_balovic_bale.png" download aria-label="Download dossier — Milan Balović „Bale“"><span aria-hidden="true">↓</span> Download dossier</a>
+          </article>
+          <article class="person-card">
+            <button class="person" data-img="evidence/dosijei/aleksandar_ilic_aco_slina.png"><div class="avatar">AI</div><div><h3>Aleksandar Ilić „Aco Slina“</h3><p>Suspect · Repeat offender</p><span class="tag red">HIGH RISK</span></div></button>
+            <a class="person-download" href="evidence/dosijei/aleksandar_ilic_aco_slina.png" download aria-label="Download dossier — Aleksandar Ilić „Aco Slina“"><span aria-hidden="true">↓</span> Download dossier</a>
+          </article>
+          <article class="person-card">
+            <button class="person" data-img="evidence/dosijei/nebojsa_jankovic.png"><div class="avatar">NJ</div><div><h3>Nebojša Janković</h3><p>Person of interest</p><span class="tag amber">UNDER INVESTIGATION</span></div></button>
+            <a class="person-download" href="evidence/dosijei/nebojsa_jankovic.png" download aria-label="Download dossier — Nebojša Janković"><span aria-hidden="true">↓</span> Download dossier</a>
+          </article>
         </div>
       </section>
 

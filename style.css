@@ -20,3 +20,78 @@ a.doc:focus-visible{
   outline:2px solid var(--blue);
   outline-offset:2px;
 }
+
+.language-switch {
+  display: inline-flex;
+  gap: 3px;
+  margin-top: 8px;
+  padding: 3px;
+  border: 1px solid #38546c;
+  border-radius: 8px;
+  background: #091724;
+}
+.language-switch > * {
+  display: inline-grid;
+  place-items: center;
+  min-width: 37px;
+  min-height: 28px;
+  padding: 0 6px;
+  border-radius: 5px;
+  color: #c2d7e8;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.language-switch [aria-current="page"] {
+  background: #a9d4ef;
+  color: #0b1b2a;
+}
+.language-switch a:hover {
+  background: #223c53;
+  color: #fff;
+}
+.topbar:has(.language-switch) {
+  height: auto;
+  min-height: 92px;
+  padding: 10px 0;
+}
+.person-card {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: #0c1b2a;
+}
+.person-card .person {
+  flex: 1;
+  width: 100%;
+  border: 0;
+  border-radius: 0;
+}
+.person-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  align-self: flex-start;
+  min-height: 36px;
+  margin: 0 12px 12px;
+  padding: 0 10px;
+  border: 1px solid #38546c;
+  border-radius: 5px;
+  background: #12283b;
+  color: #d6e9f8;
+  font-size: 11px;
+  font-weight: 700;
+  text-decoration: none;
+}
+.person-download:hover {
+  border-color: #8bc7ed;
+  background: #1b3851;
+  color: #fff;
+}
+.language-switch a:focus-visible,
+.person-card :is(button, a):focus-visible {
+  outline: 2px solid #8bd7ff;
+  outline-offset: -3px;
+}

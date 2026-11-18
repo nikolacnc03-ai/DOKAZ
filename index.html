@@ -38,7 +38,10 @@
       <header class="topbar">
         <div>
           <h1 id="viewTitle">Kontrolna tabla</h1>
-          <a href="en/index.html">English (EN)</a>
+          <div class="language-switch" role="group" aria-label="Jezik">
+            <span aria-current="page" lang="sr-Latn" aria-label="Srpski">SR</span>
+            <a href="en/index.html" lang="en" hreflang="en" aria-label="English">EN</a>
+          </div>
           <p>Predmet <b>KT256/26</b> · Istraga ubistva Milana Balovića</p>
         </div>
         <div class="userbox">
@@ -100,9 +103,18 @@
       <section id="persons" class="view">
         <div class="section-head"><div><h2>Lica i operativni dosijei</h2><p>Centralna evidencija lica povezanih sa predmetom</p></div><span class="classification">OGRANIČEN PRISTUP</span></div>
         <div class="people">
-          <button class="person" data-img="evidence/dosijei/milan_balovic_bale.png"><div class="avatar">MB</div><div><h3>Milan Balović „Bale“</h3><p>Žrtva · Operativno interesantno lice</p><span class="tag gray">PREMINUO</span></div></button>
-          <button class="person" data-img="evidence/dosijei/aleksandar_ilic_aco_slina.png"><div class="avatar">AI</div><div><h3>Aleksandar Ilić „Aco Slina“</h3><p>Osumnjičeni · Višestruki povratnik</p><span class="tag red">VISOK RIZIK</span></div></button>
-          <button class="person" data-img="evidence/dosijei/nebojsa_jankovic.png"><div class="avatar">NJ</div><div><h3>Nebojša Janković</h3><p>Operativno značajno lice</p><span class="tag amber">AKTIVNA OBRADA</span></div></button>
+          <article class="person-card">
+            <button class="person" data-img="evidence/dosijei/milan_balovic_bale.png"><div class="avatar">MB</div><div><h3>Milan Balović „Bale“</h3><p>Žrtva · Operativno interesantno lice</p><span class="tag gray">PREMINUO</span></div></button>
+            <a class="person-download" href="evidence/dosijei/milan_balovic_bale.png" download aria-label="Preuzmi dosije — Milan Balović „Bale“"><span aria-hidden="true">↓</span> Preuzmi dosije</a>
+          </article>
+          <article class="person-card">
+            <button class="person" data-img="evidence/dosijei/aleksandar_ilic_aco_slina.png"><div class="avatar">AI</div><div><h3>Aleksandar Ilić „Aco Slina“</h3><p>Osumnjičeni · Višestruki povratnik</p><span class="tag red">VISOK RIZIK</span></div></button>
+            <a class="person-download" href="evidence/dosijei/aleksandar_ilic_aco_slina.png" download aria-label="Preuzmi dosije — Aleksandar Ilić „Aco Slina“"><span aria-hidden="true">↓</span> Preuzmi dosije</a>
+          </article>
+          <article class="person-card">
+            <button class="person" data-img="evidence/dosijei/nebojsa_jankovic.png"><div class="avatar">NJ</div><div><h3>Nebojša Janković</h3><p>Operativno značajno lice</p><span class="tag amber">AKTIVNA OBRADA</span></div></button>
+            <a class="person-download" href="evidence/dosijei/nebojsa_jankovic.png" download aria-label="Preuzmi dosije — Nebojša Janković"><span aria-hidden="true">↓</span> Preuzmi dosije</a>
+          </article>
         </div>
       </section>
 

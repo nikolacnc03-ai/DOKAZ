@@ -1,0 +1,134 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Higher Public Prosecutor's Office | Trial Simulation</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+<div class="court-bg"></div>
+  <div class="grain"></div>
+
+  <div class="app-shell">
+    <aside class="sidebar glass-panel">
+      <div class="seal">VJT</div>
+      <div>
+        <h1>Trial Simulation</h1>
+        <p>Higher Public Prosecutor's Office</p>
+      </div>
+      <nav class="steps">
+        <button class="step active" data-step="0"><span>01</span> Case</button>
+        <button class="step" data-step="1"><span>02</span> Suspect</button>
+        <button class="step" data-step="2"><span>03</span> Evidence</button>
+        <button class="step" data-step="3"><span>04</span> Motive</button>
+        <button class="step" data-step="4"><span>05</span> Court</button>
+      </nav>
+      <div class="mini-card">
+        <b>Police Inspector</b>
+        <strong>Nikola Radić</strong>
+        <p>Collects, logs and submits material for the case file at the public prosecutor's direction.</p>
+      </div>
+    </aside>
+
+    <main class="workspace">
+      <header class="topbar glass-panel">
+        <div>
+          <span class="eyebrow">Active Case</span>
+          <h2 id="topTitle">Incident at the Kaldrma restaurant</h2>
+        </div>
+        <div class="people-strip">
+          <article class="person-badge prosecutor">
+            <img src="assets/img/people/javni_tuzilac_milena_kovacevic.jpg" alt="Public Prosecutor Milena Kovačević">
+            <div><span>Public Prosecutor</span><b>Milena Kovačević</b></div>
+          </article>
+          <article class="person-badge judge">
+            <img src="assets/img/people/sudija_ljiljana_markovic.jpg" alt="Judge Ljiljana Marković">
+            <div><span>Higher Court Judge</span><b>Ljiljana Marković</b></div>
+          </article>
+        </div>
+      </header>
+
+      <section class="content glass-panel">
+        <div class="progress"><i id="progressBar"></i></div>
+
+        <section class="screen active" data-screen="0">
+          <div class="hero-grid">
+            <div class="hero-copy">
+              <span class="eyebrow">Electronic Case File</span>
+              <h3>Enter Case Number</h3>
+              <p>Enter the case number so the public prosecutor can access the proceedings and begin drafting the indictment.</p>
+              <label class="field-label">Case number</label>
+              <input id="caseNumber" class="text-input" placeholder="Enter case number" />
+            </div>
+            <div class="court-card">
+              <div class="court-icon">⚖</div>
+              <h4>Higher Court in Belgrade</h4>
+              <p>The case is reviewed as part of official proceedings. Confirm each step before proceeding.</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="screen" data-screen="1">
+          <span class="eyebrow">Select a Person</span>
+          <h3>Suspects</h3>
+          <p class="screen-desc">Choose the person you have grounds to suspect took part in the offence.</p>
+          <div class="suspect-grid" id="suspectGrid"></div>
+        </section>
+
+        <section class="screen" data-screen="2">
+          <span class="eyebrow">Physical Evidence</span>
+          <h3>Evidence Categories</h3>
+          <p class="screen-desc">Attach evidence by category. The counter shows how many files are required in each category.</p>
+          <div class="evidence-grid" id="evidenceGrid"></div>
+        </section>
+
+        <section class="screen" data-screen="3">
+          <span class="eyebrow">Facts of the Case</span>
+          <h3>Motive for the Offence</h3>
+          <p class="screen-desc">State the motive for the offence. The indictment will be accepted only if the motive is sufficiently supported by the facts and evidence in the case file.</p>
+          <textarea id="motive" class="motive-box" placeholder="Enter the motive here..."></textarea>
+        </section>
+
+        <section class="screen" data-screen="4">
+          <div class="judgement-stage">
+            <div class="judge-photo"><img src="assets/img/people/sudija_ljiljana_markovic.jpg" alt="Judge Ljiljana Marković"></div>
+            <div class="verdict-box">
+              <span class="eyebrow">Court Review</span>
+              <h3>Submit the Indictment</h3>
+              <p id="verdictText">The court will review your chosen suspect, the number of items in each category and whether the stated motive fits the facts.</p>
+              <button id="submitIndictment" class="primary big">Submit to Court</button>
+            </div>
+          </div>
+        </section>
+
+        <div class="actions">
+          <button id="backBtn" class="ghost">Back</button>
+          <div class="status" id="statusText">Fill in the information and click Confirm.</div>
+          <button id="confirmBtn" class="secondary">Confirm ✓</button>
+          <button id="nextBtn" class="primary" disabled>Next</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+
+  <div id="epilogueOverlay" class="epilogue-overlay" aria-hidden="true">
+    <div class="epilogue-card">
+      <button id="closeEpilogue" class="epilogue-close" aria-label="Close">×</button>
+      <div class="secure-head">
+        <span class="secure-dot"></span> ENCRYPTED CHANNEL · CONNECTION ESTABLISHED
+      </div>
+      <div class="chat-thread" id="chatThread">
+        <div class="message milica"><b>Milica</b><p>Nikola… is it over?</p></div>
+      </div>
+      <div class="epilogue-actions" id="epilogueActions">
+        <button id="replyVerdict" class="primary">The verdict is in.</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+  <script src="js/app.js"></script>
+</body>
+</html>

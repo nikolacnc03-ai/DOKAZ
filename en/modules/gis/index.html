@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Investigative GIS — Case K-0426</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body class="booting">
+  <div id="bootScreen" class="boot-screen" aria-live="polite">
+    <div class="boot-scanline"></div>
+    <div class="boot-panel">
+      <div class="boot-seal">MUP</div>
+      <div class="boot-kicker">MINISTRY OF THE INTERIOR</div>
+      <h2>Criminal Investigation Information System</h2>
+      <p class="boot-module">GIS module · secure connection</p>
+      <div class="boot-log" id="bootLog"></div>
+      <div class="boot-progress" aria-label="Loading system">
+        <span id="bootProgressBar"></span>
+      </div>
+      <div class="boot-percent" id="bootPercent">0%</div>
+      <div class="boot-access hidden" id="bootAccess">
+        <strong>AUTHENTICATION SUCCESSFUL</strong>
+        <span>Police Inspector Nikola Radić</span>
+        <em>ACCESS GRANTED</em>
+      </div>
+    </div>
+  </div>
+
+  <div class="app-shell">
+    <header class="topbar">
+      <div class="brand">
+        <div class="crest">MUP</div>
+        <div><h1>Investigative GIS</h1><p>Criminal Investigations Directorate · Internal system</p></div>
+      </div>
+      <div class="case-chip"><span>Case</span><strong>K-0426/26</strong></div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="panel-title">Location Search</div>
+          <label for="locationInput">Name, clue or coordinates</label>
+          <div class="search-row">
+            <input id="locationInput" type="text" placeholder="Enter a search term" autocomplete="off" />
+            <button id="searchBtn">Search</button>
+          </div>
+          <p class="hint">Enter a location name, sector code or GPS coordinates.</p>
+          <div id="searchStatus" class="status idle">Awaiting input...</div>
+        </section>
+
+        <section class="panel case-info">
+          <div class="panel-title">Case Information</div>
+          <dl>
+            <div><dt>Victim</dt><dd>Milan Balović</dd></div>
+            <div><dt>Date of recovery</dt><dd>24.04.2026.</dd></div>
+            <div><dt>Inspector</dt><dd>Nikola Radić</dd></div>
+            <div><dt>Status</dt><dd><span class="status-pill">Active investigation</span></dd></div>
+          </dl>
+        </section>
+
+        <section class="panel map-info">
+          <div class="panel-title">Map View</div>
+          <p>Satellite imagery without place, building or road labels. An internet connection is required to load the imagery.</p>
+        </section>
+
+        <section id="resultCard" class="panel result-card hidden">
+          <div class="eyebrow">Search Result</div>
+          <h2>Body recovery site</h2>
+          <p>Forest sector VV-07 · north slope</p>
+          <div class="result-grid"><span>44.3118 N</span><span>20.5324 E</span></div>
+          <button id="focusCrimeScene" class="secondary-btn">Show on Map</button>
+        </section>
+      </aside>
+
+      <section class="map-area">
+        <div class="map-toolbar">
+          <div class="map-mode"><span class="mode active">Satellite GIS View</span></div>
+          <div class="coords" id="cursorCoords">44.3118 N · 20.5324 E</div>
+        </div>
+        <div id="mapViewport" class="map-viewport" aria-label="Interactive satellite map"></div>
+      </section>
+    </main>
+  </div>
+
+  <div id="sceneModal" class="modal hidden" role="dialog" aria-modal="true" aria-labelledby="sceneTitle">
+    <div class="modal-backdrop" data-close-modal></div>
+    <div class="modal-card">
+      <div class="modal-header">
+        <div><div class="eyebrow">Forensic Records</div><h2 id="sceneTitle">Recovery Site Photograph</h2></div>
+        <button class="close-btn" data-close-modal aria-label="Close">×</button>
+      </div>
+      <div class="evidence-frame">
+        <button class="image-close-btn" data-close-modal aria-label="Close photograph" title="Close photograph"><span aria-hidden="true">×</span></button>
+        <img src="assets/mesto_pronalaska.png" alt="Photograph of the body recovery site" />
+        <div class="evidence-stamp">EVIDENCE · PHOTO 01</div>
+      </div>
+      <div class="modal-footer">
+        <div><strong>Location:</strong> VV-07, north slope<br><strong>Coordinates:</strong> 44.3118 N, 20.5324 E</div>
+        <div class="modal-actions">
+          <button id="downloadPhoto" class="download-btn" type="button">Download Again</button>
+          <button id="registerEvidence">Log Photograph</button>
+        </div>
+      </div>
+      <div id="downloadNotice" class="evidence-notice hidden">The photograph was automatically downloaded as <strong>Slika_pronadjenog_tela.png</strong>.</div>
+      <div id="evidenceNotice" class="evidence-notice hidden">The photograph was added to case K-0426/26.</div>
+    </div>
+  </div>
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <script src="script.js"></script>
+</body>
+</html>

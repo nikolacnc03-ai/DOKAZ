@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Police Information System — KT256/26</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div id="boot" class="boot">
+    <div class="boot-emblem">MUP</div>
+    <div class="boot-title">POLICE INFORMATION SYSTEM</div>
+    <div class="boot-line"><span></span></div>
+    <div id="bootText" class="boot-text">Establishing a secure connection...</div>
+  </div>
+
+  <div id="app" class="app hidden">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="crest">MUP</div>
+        <div><strong>POLICE</strong><span>INFORMATION SYSTEM</span></div>
+      </div>
+      <nav>
+        <button class="nav active" data-view="dashboard">◫ <span>Dashboard</span></button>
+        <button class="nav" data-view="docs">▤ <span>Case Documents</span></button>
+        <button class="nav" data-view="persons">◉ <span>People &amp; Profiles</span></button>
+        <button class="nav" data-view="digital">⌁ <span>Digital Forensics</span></button>
+        <button class="nav" data-view="operations">⌖ <span>Investigation Tools</span></button>
+        <button class="nav" data-view="media">▧ <span>Media Coverage</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="security-dot"></div>
+        <div><b>SECURE CONNECTION</b><small>Internal police network</small></div>
+      </div>
+    </aside>
+
+    <main>
+      <header class="topbar">
+        <div>
+          <h1 id="viewTitle">Dashboard</h1>
+          <a href="../index.html" lang="sr-Latn">Srpski (SR)</a>
+          <p>Case <b>KT256/26</b> · Investigation into the murder of Milan Balović</p>
+        </div>
+        <div class="userbox">
+          <img class="userphoto" src="assets/people/inspektor_nikola_radic.jpg" alt="Inspector Nikola Radić" />
+          <div><b>Inspector Nikola Radić</b><span>Authorised access</span></div>
+          <div id="clock" class="clock"></div>
+        </div>
+      </header>
+
+      <section id="dashboard" class="view active">
+        <div class="alert"><b>ACTIVE INVESTIGATION</b><span>Case KT256/26 · Classification: CONFIDENTIAL</span></div>
+        <div class="stats">
+          <div class="stat"><span>CASE STATUS</span><b>IN PROGRESS</b><small>Opened 26 April 2026</small></div>
+          <div class="stat"><span>PERSONS ON FILE</span><b>3</b><small>1 victim · 2 persons of interest</small></div>
+          <div class="stat"><span>DOCUMENTS</span><b>7</b><small>Case files and official records</small></div>
+          <div class="stat"><span>DIGITAL SOURCES</span><b>3</b><small>Phone, encrypted communications and anonymous channel</small></div>
+        </div>
+        <h2>Quick Access</h2>
+        <div class="cards">
+          <a class="card blue" href="modules/telefon/index.html"><i>01</i><h3>Milan Balović's Phone</h3><p>Mobile forensics. PIN and phone contents.</p><span>OPEN MODULE →</span></a>
+          <a class="card cyan" href="modules/anonimni_chat/index.html"><i>02</i><h3>Anonymous Communication Channel</h3><p>Secure messages and evidence downloads.</p><span>OPEN MODULE →</span></a>
+          <a class="card green" href="modules/gis/index.html"><i>03</i><h3>Investigative GIS</h3><p>Search coordinates and locate the body recovery site.</p><span>OPEN MODULE →</span></a>
+          <a class="card red" href="modules/sudjenje/index.html"><i>04</i><h3>Indictment and Trial</h3><p>Build the case and submit the evidence you have collected.</p><span>OPEN MODULE →</span></a>
+        </div>
+        <div class="activity">
+          <h2>Recent Activity</h2>
+          <div class="timeline">
+            <div><time>03.05.2026. 14:45</time><b>Autopsy report added to the case file</b><span>Institute of Forensic Medicine</span></div>
+            <div><time>03.05.2026. 10:30</time><b>Autopsy performed on Milan Balović</b><span>Forensics / forensic medicine</span></div>
+            <div><time>26.04.2026. 11:45</time><b>Crime scene examination completed at the Kaldrma restaurant</b><span>Crime scene investigation team</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="docs" class="view">
+        <div class="section-head"><div><h2>Official Records</h2><p>Documents linked to case KT256/26</p></div><span class="classification">CONFIDENTIAL</span></div>
+        <div class="docgrid">
+          <button class="doc" data-img="evidence/dokumenti/obdukcioni_izvestaj.png"><b>OB-1</b><div><h3>Autopsy Report</h3><p>Republic Public Prosecutor's Office · 3 May 2026</p></div><span>VIEW</span></button>
+          <button class="doc" data-img="evidence/dokumenti/zapisnik_o_uvidjaju.jpg"><b>RT-U1</b><div><h3>Crime Scene Examination Report</h3><p>Kaldrma Restaurant · 26 April 2026</p></div><span>VIEW</span></button>
+          <div class="doc">
+  <b>IZ-01</b>
+  <div><h3>Witness Statement — Danijel Ilić</h3><p>Waiter · Case KT256/26</p></div>
+  <span style="margin-left:auto;display:flex;gap:10px;align-items:center">
+    <a href="evidence/dokumenti/izjava_danijel_ilic.html" style="color:#65aee3;text-decoration:none;font-weight:bold">VIEW</a>
+    <a href="evidence/dokumenti/Izjava_svedoka_Danijel_Ilic_konobar.docx" download style="color:#65aee3;text-decoration:none;font-weight:bold">DOWNLOAD ↓</a>
+  </span>
+</div>
+          <div class="doc">
+  <b>IZ-02</b>
+  <div><h3>Witness Statement — Milan Stojanović</h3><p>Owner of the Kaldrma restaurant · Case KT256/26</p></div>
+  <span style="margin-left:auto;display:flex;gap:10px;align-items:center">
+    <a href="evidence/dokumenti/izjava_milan_stojanovic.html" style="color:#65aee3;text-decoration:none;font-weight:bold">VIEW</a>
+    <a href="evidence/dokumenti/Izjava_Milan_Stojanovic_rekvizit.docx" download style="color:#65aee3;text-decoration:none;font-weight:bold">DOWNLOAD ↓</a>
+  </span>
+</div>
+        </div>
+      </section>
+
+      <section id="persons" class="view">
+        <div class="section-head"><div><h2>People and Intelligence Files</h2><p>Central register of people linked to the case</p></div><span class="classification">RESTRICTED ACCESS</span></div>
+        <div class="people">
+          <button class="person" data-img="evidence/dosijei/milan_balovic_bale.png"><div class="avatar">MB</div><div><h3>Milan Balović „Bale“</h3><p>Victim · Person of interest</p><span class="tag gray">DECEASED</span></div></button>
+          <button class="person" data-img="evidence/dosijei/aleksandar_ilic_aco_slina.png"><div class="avatar">AI</div><div><h3>Aleksandar Ilić „Aco Slina“</h3><p>Suspect · Repeat offender</p><span class="tag red">HIGH RISK</span></div></button>
+          <button class="person" data-img="evidence/dosijei/nebojsa_jankovic.png"><div class="avatar">NJ</div><div><h3>Nebojša Janković</h3><p>Person of interest</p><span class="tag amber">UNDER INVESTIGATION</span></div></button>
+        </div>
+      </section>
+
+      <section id="digital" class="view">
+        <div class="section-head"><div><h2>Digital Forensics</h2><p>Access seized devices and communications</p></div></div>
+        <div class="module-list">
+          <a href="modules/telefon/index.html"><div class="module-icon">▣</div><div><h3>Milan Balović's Mobile Phone</h3><p>Locked Android device · Seized for forensic examination</p></div><span>OPEN →</span></a>
+          <a href="modules/sifrovana_komunikacija/index.html"><div class="module-icon">🔒</div><div><h3>Seized Encrypted Communications</h3><p>Aleksandar Ilić's mobile device · Content unreadable with standard tools</p></div><span>VIEW ANALYSIS →</span></a>
+          <a href="modules/anonimni_chat/index.html"><div class="module-icon">⌁</div><div><h3>Secure Anonymous Channel</h3><p>Exchange messages and evidence with an unknown source</p></div><span>OPEN →</span></a>
+        </div>
+      </section>
+
+      <section id="operations" class="view">
+        <div class="section-head"><div><h2>Investigation Tools</h2><p>Specialised systems linked to the case</p></div></div>
+        <div class="module-list">
+          <a href="modules/gis/index.html"><div class="module-icon">⌖</div><div><h3>Investigative GIS</h3><p>Geospatial analysis and coordinate verification</p></div><span>OPEN →</span></a>
+          <a href="modules/sudjenje/index.html"><div class="module-icon">⚖</div><div><h3>Case Prosecution</h3><p>File charges, submit evidence and receive the verdict</p></div><span>OPEN →</span></a>
+        </div>
+      </section>
+
+      <section id="media" class="view">
+        <div class="section-head"><div><h2>Media Coverage</h2><p>Media reports linked to case KT256/26</p></div><span class="classification">FOR INFORMATION</span></div>
+        <div class="media-warning"><b>NOTE</b><span>Media reports may contain unconfirmed or inaccurate claims. They should be read separately from official findings.</span></div>
+        <div class="module-list">
+          <a href="modules/mediji/drzavni_glasnik/index.html"><div class="module-icon">▤</div><div><h3>Državni glasnik</h3><p>Public reporting on the murder of Milan Balović</p></div><span>OPEN WEBSITE →</span></a>
+          <a href="modules/mediji/milica_petrovic/index.html"><div class="module-icon">◈</div><div><h3>Milica Petrović — Independent Website</h3><p>Investigative articles and posts about the case</p></div><span>OPEN WEBSITE →</span></a>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <div id="viewer" class="viewer" aria-hidden="true">
+    <button id="closeViewer">×</button>
+    <img id="viewerImg" alt="Document" />
+    <div class="viewer-tip">Press Esc or click × to close</div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
